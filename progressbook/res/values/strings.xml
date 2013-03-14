@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Progress Book Mobile</string>
+    <string name="action_settings">Settings</string>
+    <string name="choose_district">Choose your district!</string>
+    <string name="custom_district_title">My progressbook</string>
+    <string name="custom_district_message">Type your progressbook URL (should start with https:// and end with /General/District (usually))</string>
+    
+    <string-array name="districts">
+        <item>OCPS</item>
+        <item>Other</item>
+    </string-array>
+</resources>
