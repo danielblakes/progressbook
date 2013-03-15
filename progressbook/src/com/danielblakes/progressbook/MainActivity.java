@@ -25,18 +25,17 @@ public class MainActivity extends Activity {
 				"com.danielblakes.progressbook", MODE_PRIVATE).getBoolean(
 				"firstrun", true);
 		if (firstrun) {
-			new AlertDialog.Builder(this).setTitle("First Run").show();
 			pickDistrict(this);
 			getSharedPreferences("com.danielblakes.progressbook", MODE_PRIVATE)
 					.edit().putBoolean("firstrun", false).commit();
 		}
 
-//		else {
-//			String saved_district = getSharedPreferences(
-//					"com.danielblakes.progressbook", MODE_PRIVATE).getString(
-//					"district", null);
-//			startupWebView(saved_district);
-//		}
+		else {
+			String saved_district = getSharedPreferences(
+					"com.danielblakes.progressbook", MODE_PRIVATE).getString(
+					"district", null);
+			startupWebView(saved_district);
+		}
 	}
 
 	@Override
@@ -87,14 +86,14 @@ public class MainActivity extends Activity {
 											.putString("district",
 													district_site).commit();
 								} else if (i == 1) {
-									AlertDialog.Builder customdistrict = new AlertDialog.Builder(context);
+									AlertDialog.Builder customdistrict = new AlertDialog.Builder(
+											context);
 									customdistrict
 											.setTitle(
 													R.string.custom_district_title)
 											.setMessage(
 													R.string.custom_district_message);
-									final EditText input = new EditText(
-											getParent());
+									final EditText input = new EditText(context);
 									customdistrict.setView(input);
 									customdistrict
 											.setPositiveButton(
@@ -114,6 +113,7 @@ public class MainActivity extends Activity {
 																			"district",
 																			custom_url)
 																	.commit();
+															startupWebView(custom_url);
 														}
 													});
 									customdistrict
